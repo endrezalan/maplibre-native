@@ -138,7 +138,7 @@ void TileSourceRenderItem::updateDebugDrawables(DebugLayerGroupMap& debugLayerGr
         builder->setTexture(texture, samplerLocation.value());
 
         // finish
-        builder->flush();
+        builder->flush(context);
         for (auto& drawable : builder->clearDrawables()) {
             drawable->setTileID(tileID);
             auto& uniforms = drawable->mutableUniformBuffers();
